@@ -25,6 +25,7 @@ jl.scrollToAreaMenu = function(menuString) {
 
 /* 원페이지 무한 및 스와이프 슬라이더 20231204 */
 jl.infiniteSlider = function(sliderString){
+
   /* DOM 요소 */
   const customSlide = document.querySelector(sliderString);
   const sliderEl = customSlide.querySelector(".slider");
@@ -42,16 +43,16 @@ jl.infiniteSlider = function(sliderString){
 
   /* 화면 초기 설정 */
   // 슬라이더 양 옆에 추가
-  let currentIndex = 1;
+  let currentIndex = 1; // 현재 슬라이더 인덱스
   let cloneFirst = firstEl.cloneNode(true);
   let cloneLast = lastEl.cloneNode(true);
   slideWrapEl.appendChild(cloneFirst);
   slideWrapEl.insertBefore(cloneLast, slideWrapEl.firstElementChild);
-  slideWrapEl.style.transform = "translateX(-100%)";
+  slideWrapEl.style.transform = `translateX( -100%)`;
   // pagination 요소 추가
   let paginationItem;
   slideEls.forEach(function (slide, index) {
-    let pageNumber = index + 1;
+    let pageNumber = index + 1; // 현재 슬라이더 인덱스를 pagination에 넣을 겁니당
     paginationItem = document.createElement('div');
     paginationItem.classList.add('pagination-item');
     paginationItem.textContent = pageNumber;
@@ -70,7 +71,7 @@ jl.infiniteSlider = function(sliderString){
   }
   /* 슬라이더 페이지네이션 확인 */
   function sliderMove(currentIndex){
-    sliderSetTransition(".3s", "translateX(" + (-currentIndex * 100) + "%)" )
+    sliderSetTransition(".3s", `translateX(${-currentIndex * 100}%)` )
     paginationItems.forEach(function (item) {
       item.classList.remove('active');
     });
@@ -86,11 +87,11 @@ jl.infiniteSlider = function(sliderString){
   function sliderInfinite(){
     if (currentIndex == slideElsLength + 1){
       // 마지막 슬라이더일때
-      sliderSetTransition("none", "translateX(-100%)")
+      sliderSetTransition("none", `translateX(-100%)`)
       currentIndex =1;
     } else if ((currentIndex == 0)){
       // 처음 슬라이더일때
-      sliderSetTransition("none", "translateX(" + (-slideElsLength * 100) + "%)" )
+      sliderSetTransition("none", `translateX( ${-slideElsLength * 100}%)`)
       currentIndex = slideElsLength;
     }
     return currentIndex;
@@ -129,10 +130,10 @@ jl.infiniteSlider = function(sliderString){
   });
 
   /* Slider 스와이프 */
-  let startPos = 0;
-  let offset = 0;
-  let sliderClick = false;
-  let changePoint;
+  let startPos = 0; // 시작 좌표
+  let offset = 0; // 이동 좌표
+  let sliderClick = false; // true일때만 스와이프 가능하도록
+  let changePoint; // 스와이프 이동 기준 값
 
   function handleSwipeStart(e) {
     startPos = e.clientX || e.touches[0].clientX;
@@ -169,10 +170,12 @@ jl.infiniteSlider = function(sliderString){
     }
   }
   
+  
   // 데스크탑 스와이프
   sliderEl.addEventListener("mousedown", handleSwipeStart);
   sliderEl.addEventListener("mousemove", handleSwipeMove);
   sliderEl.addEventListener("mouseup", handleSwipeEnd);
+  sliderEl.addEventListener("mouseleave", handleSwipeEnd);
   
   // 모바일 스와이프
   sliderEl.addEventListener("touchstart", handleSwipeStart);
