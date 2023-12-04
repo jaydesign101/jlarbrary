@@ -153,13 +153,12 @@ jl.infiniteSlider = function(sliderString){
     if (changePoint < Math.abs(offset)) {
       if (offset < 0 && !isAnimating) {
         currentIndex++;
-      } else {
+      } else if (offset > 0 && !isAnimating) {
         currentIndex--;
-      }
-  
+      } 
+      offset = 0;
       isAnimating = true;
       sliderMove(currentIndex);
-  
       setTimeout(function () {
         sliderInfinite();
         isAnimating = false;
