@@ -21,35 +21,35 @@
   color: #999;
 }
 
-/* infiniteOneSlider CSS */
-#infiniteOneSlider {
+/* infiniteSlider CSS */
+#infiniteSlider {
   position: relative;
   width: 100%;
   margin: 0 auto;
   user-select: none;
 }
-#infiniteOneSlider [class*=btn-] {
+#infiniteSlider [class*=btn-] {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
 }
-#infiniteOneSlider [class*=btn-].btn-prev {
+#infiniteSlider [class*=btn-].btn-prev {
   left: 0;
 }
-#infiniteOneSlider [class*=btn-].btn-next {
+#infiniteSlider [class*=btn-].btn-next {
   right: 0;
 }
-#infiniteOneSlider .slider {
+#infiniteSlider .slider {
   margin: 0 auto;
   width: calc(100% - 100px);
   overflow: hidden;
   border: 3px solid #000;
 }
-#infiniteOneSlider .slider .slide-wrap {
+#infiniteSlider .slider .slide-wrap {
   display: flex;
 }
-#infiniteOneSlider .slider .slide-wrap .slide {
+#infiniteSlider .slider .slide-wrap .slide {
   flex-shrink: 0;
   border: 1px solid #000;
   width: 100%;
@@ -58,7 +58,7 @@
   justify-content: center;
   align-items: center;
 }
-#infiniteOneSlider .pagination {
+#infiniteSlider .pagination {
   display: flex;
   gap: 0.2em;
   position: absolute;
@@ -66,7 +66,7 @@
   left: 50%;
   transform: translateX(-50%);
 }
-#infiniteOneSlider .pagination > div {
+#infiniteSlider .pagination > div {
   flex-shrink: 0;
   width: 12px;
   height: 12px;
@@ -76,6 +76,6 @@
   background-color: gray;
   cursor: pointer;
 }
-#infiniteOneSlider .pagination > div.active {
+#infiniteSlider .pagination > div.active {
   background-color: red;
 }
