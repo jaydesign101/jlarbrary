@@ -1,0 +1,81 @@
+@import url("./../css/settingStart.css");
+/* scrollToAreaMenu CSS */
+#scrollToAreaMenu header {
+  position: fixed;
+  background-color: #999;
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+}
+#scrollToAreaMenu header a {
+  padding: 10px;
+}
+#scrollToAreaMenu > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid #000;
+  font-size: 30px;
+  color: #999;
+}
+
+/* infiniteOneSlider CSS */
+#infiniteOneSlider {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  user-select: none;
+}
+#infiniteOneSlider [class*=btn-] {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+#infiniteOneSlider [class*=btn-].btn-prev {
+  left: 0;
+}
+#infiniteOneSlider [class*=btn-].btn-next {
+  right: 0;
+}
+#infiniteOneSlider .slider {
+  margin: 0 auto;
+  width: calc(100% - 100px);
+  overflow: hidden;
+  border: 3px solid #000;
+}
+#infiniteOneSlider .slider .slide-wrap {
+  display: flex;
+}
+#infiniteOneSlider .slider .slide-wrap .slide {
+  flex-shrink: 0;
+  border: 1px solid #000;
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#infiniteOneSlider .pagination {
+  display: flex;
+  gap: 0.2em;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#infiniteOneSlider .pagination > div {
+  flex-shrink: 0;
+  width: 12px;
+  height: 12px;
+  font-size: 8px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: gray;
+  cursor: pointer;
+}
+#infiniteOneSlider .pagination > div.active {
+  background-color: red;
+}

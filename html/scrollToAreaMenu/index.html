@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>scrollToAreaMenu</title>
+
+  <link rel="stylesheet" href="./../../css/jl0.0.css">
+  <script src="./../../js/jl0.0.js"></script>
+
+</head>
+<body id="scrollToAreaMenu">
+  <header>
+    <a href="#s1">s1</a>
+    <a href="#s2">s2</a>
+    <a href="#s3">s3</a>
+  </header>
+
+  <section id="s1">s1</section>
+  <section id="s2">s2</section>
+  <section id="s3">s3</section>
+
+  <!-- scrollToArea SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+      jl.scrollToAreaMenu("#scrollToAreaMenu header a");
+
+    });
+  </script>
+</body>
+</html>
