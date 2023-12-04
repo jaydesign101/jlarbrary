@@ -2,26 +2,30 @@
 var jl = jl || {};
 
 
-/* obj를 클릭하면 id로 연결된 섹션으로 이동 20231201 */
-jl.scrollToAreaMenu = function(menuString) {
-  const menuLinkEls = document.querySelectorAll(menuString);
-  menuLinkEls.forEach(function(linkEl) {
-    linkEl.addEventListener("click", function(e) {
-      e.preventDefault();  // 브라우저 기본 이벤트 무력화
-      const linkLocation = this.getAttribute('href');
-      const targetElement = document.querySelector(linkLocation);
-      console.log(targetElement)
+/* 무한 롤링 슬라이더 20231204 */
+jl.infiniteSideRolling = function(rollingString){
+  const customRolling = document.querySelector(rollingString);
+  const itemWrapEl = customRolling.querySelector(".item-wrap");
+  const itemEls = itemWrapEl.querySelector(".item");
 
-      if (linkLocation && targetElement) {
-        const targetOffsetTop = targetElement.offsetTop;
-        window.scrollTo({ 
-          top: targetOffsetTop,
-          behavior: 'smooth' // 부드럽게 스크롤
-        });
-      }
-    });
-  });
-};
+  /* item-wrap 복제 및 생성 */
+  let cloneItem = itemWrapEl.cloneNode(true);
+  cloneItem.id = "rolling2";
+  customRolling.appendChild(cloneItem)
+
+  /* 마우스 오버시 애니메이션 스탑 */
+  customRolling.addEventListener("mouseover",function(){
+    customRolling.querySelector("#rolling1").style.animationPlayState = 'paused';
+    customRolling.querySelector("#rolling2").style.animationPlayState = 'paused';
+  })
+   /* 마우스 리브시 애니메이션 스탑 */
+  customRolling.addEventListener("mouseleave",function(){
+    customRolling.querySelector("#rolling1").style.animationPlayState = 'running';
+    customRolling.querySelector("#rolling2").style.animationPlayState = 'running';
+  })
+
+}
+
 
 /* 원페이지 무한 및 스와이프 슬라이더 20231204 */
 jl.infiniteSlider = function(sliderString){
@@ -183,3 +187,23 @@ jl.infiniteSlider = function(sliderString){
   sliderEl.addEventListener("touchend", handleSwipeEnd);
 };
 
+/* obj를 클릭하면 id로 연결된 섹션으로 이동 20231201 */
+jl.scrollToAreaMenu = function(menuString) {
+  const menuLinkEls = document.querySelectorAll(menuString);
+  menuLinkEls.forEach(function(linkEl) {
+    linkEl.addEventListener("click", function(e) {
+      e.preventDefault();  // 브라우저 기본 이벤트 무력화
+      const linkLocation = this.getAttribute('href');
+      const targetElement = document.querySelector(linkLocation);
+      console.log(targetElement)
+
+      if (linkLocation && targetElement) {
+        const targetOffsetTop = targetElement.offsetTop;
+        window.scrollTo({ 
+          top: targetOffsetTop,
+          behavior: 'smooth' // 부드럽게 스크롤
+        });
+      }
+    });
+  });
+};

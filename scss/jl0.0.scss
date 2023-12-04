@@ -1,29 +1,46 @@
 @import url("./../css/settingStart.css");
 
+/* infiniteSideRolling CSS */
+#infiniteSideRolling{
+  width: 100%;
+  background-color: aliceblue;
+  overflow: hidden;
+  display: flex;
 
-/* scrollToAreaMenu CSS */
-#scrollToAreaMenu{
-  header{
-    position: fixed;
-    background-color: #999;
+  .item-wrap{
     width: 100%;
-    color: #fff;
-    font-size: 20px;
-    a{
-      padding: 10px;
+    display: flex;
+    flex-shrink: 0;
+    justify-content:space-around;
+    &#rolling1{
+      animation: infiniteSideRollingMove1 10s linear infinite;
+    }
+    &#rolling2{
+      animation: infiniteSideRollingMove2 10s linear infinite;
     }
   }
-  > section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    border: 1px solid #000;
-    font-size: 30px;
-    color: #999;
-  }
+  
+  .item{
+      width: 100px;
+      height: 100px;
+      background-color:antiquewhite;
+      cursor: pointer;
+      &:hover{
+        background-color: burlywood;
+      }
+   } 
 }
+@keyframes infiniteSideRollingMove1 {
+  0%{transform: translateX(0);}
+  50%{transform: translateX(-100%);}
+  50.01%{transform: translateX(100%);}
+  100%{transform: translateX(0);}
+}
+@keyframes infiniteSideRollingMove2 {
+  0%{transform: translateX(0);}
+  100%{transform: translateX(-200%);}
+}
+
 
 /* infiniteSlider CSS */
 #infiniteSlider{
@@ -85,4 +102,29 @@
   }
 
 
+}
+
+
+/* scrollToAreaMenu CSS */
+#scrollToAreaMenu{
+  header{
+    position: fixed;
+    background-color: #999;
+    width: 100%;
+    color: #fff;
+    font-size: 20px;
+    a{
+      padding: 10px;
+    }
+  }
+  > section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    border: 1px solid #000;
+    font-size: 30px;
+    color: #999;
+  }
 }
