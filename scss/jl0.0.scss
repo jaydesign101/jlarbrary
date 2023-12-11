@@ -106,25 +106,23 @@
 
 
 /* scrollToAreaMenu CSS */
-#scrollToAreaMenu{
-  header{
-    position: fixed;
-    background-color: #999;
-    width: 100%;
-    color: #fff;
-    font-size: 20px;
-    a{
-      padding: 10px;
-    }
+header#scrollToAreaMenu{
+  position: fixed;
+  background-color: #999;
+  width: 100%;
+  color: #fff;
+  font-size: 20px;
+  a{
+    padding: 10px;
   }
-  > section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-    border: 1px solid #000;
-    font-size: 30px;
-    color: #999;
-  }
+}
+section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  border: 1px solid #000;
+  font-size: 30px;
+  color: #999;
 }

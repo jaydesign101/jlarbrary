@@ -173,7 +173,6 @@ jl.infiniteSlider = function(sliderString){
     }
   }
   
-  
   // 데스크탑 스와이프
   sliderEl.addEventListener("mousedown", handleSwipeStart);
   sliderEl.addEventListener("mousemove", handleSwipeMove);
@@ -185,6 +184,7 @@ jl.infiniteSlider = function(sliderString){
   sliderEl.addEventListener("touchmove", handleSwipeMove);
   sliderEl.addEventListener("touchend", handleSwipeEnd);
 };
+
 
 /* obj를 클릭하면 id로 연결된 섹션으로 이동 20231201 */
 jl.scrollToAreaMenu = function(menuString) {

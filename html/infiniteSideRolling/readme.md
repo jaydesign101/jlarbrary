@@ -1,4 +1,6 @@
-## 무한 롤링 슬라이더 (infiniteSideRolling)
+## 무한 롤링 슬라이드 (infiniteSideRolling)
+
+<br>
 
 1. [설명 및 이력](#설명-및-이력)
 1. [코드](#코드)
@@ -193,7 +195,7 @@ jl.infiniteSideRolling = function(rollingString){
     })
     ```
 
-6. mouseleave 이벤트 발생시, #rolling1과 #rolling2의 애니메이션을 실행한다.
+7. mouseleave 이벤트 발생시, #rolling1과 #rolling2의 애니메이션을 실행한다.
     ```
     customRolling.addEventListener("mouseleave",function(){
       this.querySelector("#rolling1").style.animationPlayState = 'running';
@@ -225,12 +227,12 @@ parent.appendChild(child)
 <br>
 
 ### 애니메이션 중단 및 실행 (css) : style.animationPlayState = "paused/running"
-js
+#### ※ js
 ```
 요소.style.animationPlayState = 'paused';
 요소.style.animationPlayState = 'running';
 ```
-css
+#### ※ css
 ```
 요소 {
   animation-play-state : paused;

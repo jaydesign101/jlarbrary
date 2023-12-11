@@ -110,17 +110,18 @@
 }
 
 /* scrollToAreaMenu CSS */
-#scrollToAreaMenu header {
+header#scrollToAreaMenu {
   position: fixed;
   background-color: #999;
   width: 100%;
   color: #fff;
   font-size: 20px;
 }
-#scrollToAreaMenu header a {
+header#scrollToAreaMenu a {
   padding: 10px;
 }
-#scrollToAreaMenu > section {
+
+section {
   display: flex;
   justify-content: center;
   align-items: center;
