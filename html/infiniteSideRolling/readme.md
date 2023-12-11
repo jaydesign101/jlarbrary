@@ -13,9 +13,6 @@
 
 <br>
 
-<iframe src="https://jaydesign101.github.io/jlarbrary/html/infiniteSideRolling/index.html" width="500px" height="200px">
-</iframe>
-
 ----------------------------------------------------  
 
 # 설명 및 이력
