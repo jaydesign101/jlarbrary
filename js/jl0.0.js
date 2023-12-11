@@ -15,15 +15,14 @@ jl.infiniteSideRolling = function(rollingString){
 
   /* 마우스 오버시 애니메이션 스탑 */
   customRolling.addEventListener("mouseover",function(){
-    customRolling.querySelector("#rolling1").style.animationPlayState = 'paused';
-    customRolling.querySelector("#rolling2").style.animationPlayState = 'paused';
+    this.querySelector("#rolling1").style.animationPlayState = 'paused';
+    this.querySelector("#rolling2").style.animationPlayState = 'paused';
   })
-   /* 마우스 리브시 애니메이션 스탑 */
+   /* 마우스 리브시 애니메이션 실행 */
   customRolling.addEventListener("mouseleave",function(){
-    customRolling.querySelector("#rolling1").style.animationPlayState = 'running';
-    customRolling.querySelector("#rolling2").style.animationPlayState = 'running';
+    this.querySelector("#rolling1").style.animationPlayState = 'running';
+    this.querySelector("#rolling2").style.animationPlayState = 'running';
   })
-
 }
 
 
