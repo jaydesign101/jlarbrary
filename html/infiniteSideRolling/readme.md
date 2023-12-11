@@ -8,6 +8,10 @@
 1. [코드 설명](#코드-설명)
 1. [문법 정리](#문법-정리)
 
+<br>
+<a href="https://jaydesign101.github.io/jlarbrary/html/infiniteSideRolling/index.html">화면보기</a>
+
+<br>
 
 ----------------------------------------------------  
 
