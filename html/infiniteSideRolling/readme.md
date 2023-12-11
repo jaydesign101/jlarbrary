@@ -189,7 +189,7 @@ jl.infiniteSideRolling = function(rollingString){
     })
     ```
 
-6. mouseleave 이벤트 발생시, #rolling1과 #rolling2의 애니메이션을 중단한다.
+6. mouseleave 이벤트 발생시, #rolling1과 #rolling2의 애니메이션을 실행한다.
     ```
     customRolling.addEventListener("mouseleave",function(){
       this.querySelector("#rolling1").style.animationPlayState = 'running';
