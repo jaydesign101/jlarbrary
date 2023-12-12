@@ -104,7 +104,7 @@
 
 ### jl0.0.js
 ```
-/* 무한 롤링 슬라이더 20231204 */
+/* 무한 롤링 슬라이드 (infiniteSideRolling) 20231204 */
 jl.infiniteSideRolling = function(rollingString){
   const customRolling = document.querySelector(rollingString);
   const itemWrapEl = customRolling.querySelector(".item-wrap");
@@ -140,7 +140,7 @@ jl.infiniteSideRolling = function(rollingString){
     let cloneItem = itemWrapEl.cloneNode(true);
     cloneItem.id = "rolling2";
     ```
-    <img src="./md_img/infiniteSideRolling1.png">
+    <img src="./md_img/img1.png">
 
 <br>
 
@@ -149,7 +149,7 @@ jl.infiniteSideRolling = function(rollingString){
     const customRolling = document.querySelector("#infiniteSideRolling");
     customRolling.appendChild(cloneItem)
     ```
-    <img src="./md_img/infiniteSideRolling2.png">
+    <img src="./md_img/img2.png">
 
 <br>
 
@@ -165,7 +165,7 @@ jl.infiniteSideRolling = function(rollingString){
       100%{transform: translateX(0);}
     }
     ```
-    <img src="./md_img/infiniteSideRolling3.png">
+    <img src="./md_img/img3.png">
 
 <br>
 
@@ -178,12 +178,12 @@ jl.infiniteSideRolling = function(rollingString){
       100%{transform: translateX(-200%);}
     }
     ```
-    <img src="./md_img/infiniteSideRolling4.png">
+    <img src="./md_img/img4.png">
 
 <br>
 
 5. 전체적인 애니메이션은 아래와 같다. 0%~100%가 계속 반복됨
-    <img src="./md_img/infiniteSideRolling5.png">
+    <img src="./md_img/img5.png">
 
 <br>
 

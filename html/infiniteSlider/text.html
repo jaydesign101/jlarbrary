@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>infiniteSlider</title>
+
+  <link rel="stylesheet" href="./../../css/jl0.0.css">
+
+
+</head>
+<body>
+
+  <!-- infiniteSlider HTML -->
+  <div class="box">ㅇㅇㅇㅇ</div>
+  <p class="add">add add2</p>
+  <p class="remove">remvoe box</p>
+  <p class="toggle">toggle add</p>
+  <p class="contains">contains add</p>
+  <p class="replace">replace add</p>
+    
+  <!-- infiniteSlider SCRIPT -->
+  <script>
+    const box = document.querySelector(".box")
+    let boxClass = box.classList.value;
+    box.textContent = boxClass;
+    let bool;
+
+
+    document.querySelector(".add").addEventListener('click',function(){
+      box.classList.add("add2");
+      boxClass = box.classList.value;
+      box.textContent = boxClass;
+    })
+    document.querySelector(".remove").addEventListener('click',function(){
+      box.classList.remove("add2");
+      boxClass = box.classList.value;
+      box.textContent = boxClass;
+    })
+    document.querySelector(".contains").addEventListener('click',function(){
+      bool = box.classList.contains("add2");
+      boxClass = bool;
+      box.textContent = bool;
+    })
+    document.querySelector(".replace").addEventListener('click',function(){
+      box.classList.replace("add2", "new2");
+      boxClass = box.classList.value;
+      box.textContent = boxClass;
+    })
+    
+
+  </script>
+
+</body>
+</html>

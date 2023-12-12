@@ -11,7 +11,7 @@
 1. [문법 정리](#문법-정리)
 
 <br>
-<a href="링크">화면보기</a>
+<a href="https://jaydesign101.github.io/jlarbrary/html/scrollToAreaMenu/index.html">화면보기</a>
 
 <br>
 
@@ -79,7 +79,7 @@ section{
 
 ### jl0.0.js
 ```
-/* obj를 클릭하면 id로 연결된 섹션으로 이동 20231201 */
+/* 원페이지 해당 화면 스크롤 이동 (scrollToArea) 20231204 */
 jl.scrollToAreaMenu = function(menuString) {
   const menuLinkEls = document.querySelectorAll(menuString);
   menuLinkEls.forEach(function(linkEl) {

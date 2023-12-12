@@ -2,7 +2,7 @@
 var jl = jl || {};
 
 
-/* 무한 롤링 슬라이더 20231204 */
+/* 무한 롤링 슬라이드 (infiniteSideRolling) 20231204 */
 jl.infiniteSideRolling = function(rollingString){
   const customRolling = document.querySelector(rollingString);
   const itemWrapEl = customRolling.querySelector(".item-wrap");
@@ -26,7 +26,7 @@ jl.infiniteSideRolling = function(rollingString){
 }
 
 
-/* 원페이지 무한 및 스와이프 슬라이더 20231204 */
+/* 원섹션 무한 및 스와이프 슬라이드 (infiniteSlider) 20231204 */
 jl.infiniteSlider = function(sliderString){
 
   /* DOM 요소 */
@@ -37,18 +37,16 @@ jl.infiniteSlider = function(sliderString){
   const slideElsLength = slideEls.length;
   const paginationEl = customSlide.querySelector(".pagination");
  
-  const btnPrevEl = document.querySelector(sliderString + "> .btn-prev");
-  const btnNextEl = document.querySelector(sliderString + "> .btn-next");
-  
-  const firstEl = slideWrapEl.firstElementChild;
-  const lastEl = slideWrapEl.lastElementChild;
+  const btnPrevEl = customSlide.querySelector(sliderString + "> .btn-prev");
+  const btnNextEl = customSlide.querySelector(sliderString + "> .btn-next");
+
+  const cloneFirst = slideWrapEl.firstElementChild.cloneNode(true);
+  const cloneLast = slideWrapEl.lastElementChild.cloneNode(true);
 
 
   /* 화면 초기 설정 */
   // 슬라이더 양 옆에 추가
   let currentIndex = 1; // 현재 슬라이더 인덱스
-  let cloneFirst = firstEl.cloneNode(true);
-  let cloneLast = lastEl.cloneNode(true);
   slideWrapEl.appendChild(cloneFirst);
   slideWrapEl.insertBefore(cloneLast, slideWrapEl.firstElementChild);
   slideWrapEl.style.transform = `translateX( -100%)`;
@@ -61,7 +59,7 @@ jl.infiniteSlider = function(sliderString){
     paginationItem.textContent = pageNumber;
     paginationEl.appendChild(paginationItem);
   });
-  const paginationItems = document.querySelectorAll('.pagination-item');
+  const paginationItems = customSlide.querySelectorAll('.pagination-item');
   paginationItems[0].classList.add('active');
 
   /* 슬라이드 클릭 *********************************************************/
@@ -136,7 +134,7 @@ jl.infiniteSlider = function(sliderString){
   let startPos = 0; // 시작 좌표
   let offset = 0; // 이동 좌표
   let sliderClick = false; // true일때만 스와이프 가능하도록
-  let changePoint; // 스와이프 이동 기준 값
+  let changePoint = Math.round(slideWrapEl.offsetWidth / 4); // 스와이프 이동 기준 값 25%
 
   function handleSwipeStart(e) {
     startPos = e.clientX || e.touches[0].clientX;
@@ -145,14 +143,14 @@ jl.infiniteSlider = function(sliderString){
   
   function handleSwipeMove(e) {
     if (sliderClick) {
-      offset = (e.pageX || e.targetTouches[0].pageX) - startPos;
+      offset = (e.clientX || e.targetTouches[0].e.clientX) - startPos;
       sliderSetTransition("none", `translateX( calc( ${currentIndex} * -100% +  ${offset}px))`);
     }
   }
   
   function handleSwipeEnd() {
     sliderClick = false;
-    changePoint = Math.round(slideWrapEl.offsetWidth / 4);
+   
   
     if (changePoint < Math.abs(offset)) {
       if (offset < 0 && !isAnimating) {
@@ -186,7 +184,7 @@ jl.infiniteSlider = function(sliderString){
 };
 
 
-/* obj를 클릭하면 id로 연결된 섹션으로 이동 20231201 */
+/* 원페이지 해당 화면 스크롤 이동 (scrollToArea) 20231204 */
 jl.scrollToAreaMenu = function(menuString) {
   const menuLinkEls = document.querySelectorAll(menuString);
   menuLinkEls.forEach(function(linkEl) {

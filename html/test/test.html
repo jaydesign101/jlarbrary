@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./../../css/test.css">
+</head>
+<body>
+  <div class="box" style="width: 100%; margin-left: 100px; height: 10000px;">
+    <b>Screen X, Y</b> : <span class="sX">0</span> , <span class="sY">0</span><br>
+    <b>Page X, Y</b> : <span class="pX">0</span> , <span class="pY">0</span><br>
+    <b>Client X, Y</b> : <span class="cX">0</span> , <span class="cY">0</span><br>
+    <b>Offset X, Y</b> : <span class="oX">0</span> , <span class="oY">0</span><br>
+  </div>
+
+
+  <script>
+    const box = document.querySelector(".box")
+    const sX = document.querySelector(".sX")
+    const sY = document.querySelector(".sY")
+    const pX = document.querySelector(".pX")
+    const pY = document.querySelector(".pY")
+    const cX = document.querySelector(".cX")
+    const cY = document.querySelector(".cY")
+    const oX = document.querySelector(".oX")
+    const oY = document.querySelector(".oY")
+
+    box.addEventListener("mousemove",function(e){
+      sX.textContent = e.screenX;
+      sY.textContent = e.screenY;
+
+      pX.textContent = e.pageX;
+      pY.textContent = e.pageY;
+
+      cX.textContent = e.clientX;
+      cY.textContent = e.clientY;
+
+      oX.textContent = e.offsetX;
+      oY.textContent = e.offsetY;
+    })
+    
+  </script>
+</body>
+</html>
