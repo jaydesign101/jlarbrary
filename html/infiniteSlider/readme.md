@@ -11,7 +11,7 @@
 1. [문법 정리](#문법-정리)
 
 <br>
-<a href="링크">화면보기</a>
+<a href="https://jaydesign101.github.io/jlarbrary/html/infiniteSlider/index.html">화면보기</a>
 
 <br>
 
